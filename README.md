@@ -107,16 +107,16 @@ python evaluation.py --model bert-base-cased-task-A-eng
 'bert-base-cased-task-A-eng', 'bert-base-cased-task-B-eng', 'bert-base-cased-task-C-eng', 'bert-base-multilingual-cased-task-A-danish'
 
 ###### Results of our best models
-bert-base-cased-task-A-eng: MacroAvg F1 score **0.8175**
-bert-base-cased-task-B-eng: MacroAvg F1 score **0.7318**
-bert-base-cased-task-C-eng: MacroAvg F1 score **0.5773**
-bert-base-multilingual-cased-task-A-danish: MacroAvg F1 score **0.7814**
+- bert-base-cased-task-A-eng: MacroAvg F1 score **0.8175**
+- bert-base-cased-task-B-eng: MacroAvg F1 score **0.7318**
+- bert-base-cased-task-C-eng: MacroAvg F1 score **0.5773**
+- bert-base-multilingual-cased-task-A-danish: MacroAvg F1 score **0.7814**
 
 OffensEval 2020 reports the following majority baselines for the tasks (F1-score):
-• Subtask A (English): 0.4193
-• Subtask B (English): 0.3741
-• Subtask C (English): 0.2704
-• Subtask A (Danish): 0.4668
+- Subtask A (English): 0.4193
+- Subtask B (English): 0.3741
+- Subtask C (English): 0.2704
+- Subtask A (Danish): 0.4668
 
 #### Features
 
