@@ -69,6 +69,7 @@ After training, the model is **saved and evaluated** on the test set automatical
 
 **Usage Example:**
 ```bash
+cd src
 python training.py --task A-eng --model albert-base-v2 --preprocessing-data lowercasing --hyperparameters batch-16 --full-dataset
 ```
 
