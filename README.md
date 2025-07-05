@@ -95,7 +95,7 @@ Thus, there are four best models available (one for each subtask).
 
 **Usage Example:**
 ```bash
-python evaluation.py --model albert-base-v2-task-A-eng
+python evaluation.py --model bert-base-cased-task-A-eng
 ```
 
 ###### Command-Line Options
@@ -103,8 +103,8 @@ python evaluation.py --model albert-base-v2-task-A-eng
 | Argument | Description | Choices |
 |:-:|:-|:-|
 | `-h, --help` | Show help message and exit | |
-| `--model` | Choose one of the pre-trained models to evaluate | `{albert-base-v2-task-A-eng, albert-base-v2-task-B-eng, bert-base-cased-task-C-eng, bert-base-multilingual-cased-task-A-danish}` |
-
+| `--model` | Choose one of the pre-trained models to evaluate | `{bert-base-cased-task-A-eng, bert-base-cased-task-B-eng, bert-base-cased-task-C-eng, bert-base-multilingual-cased-task-A-danish}` |
+'bert-base-cased-task-A-eng', 'bert-base-cased-task-B-eng', 'bert-base-cased-task-C-eng', 'bert-base-multilingual-cased-task-A-danish'
 #### Features
 
 Fine-tuning & Evaluation for **4 subtasks**  
