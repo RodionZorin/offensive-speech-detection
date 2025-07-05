@@ -1,6 +1,6 @@
 ## Offensive Language Detection Pipeline
 
-A pipeline for fine-tuning and evaluating transformer-based models on the **Offensive Language Identification (OLID)** task.  
+A pipeline for fine-tuning and evaluating transformer-based models on the **Offensive Language Identification (OLID)** task.
 Supports **English Tasks A, B, C** and **Danish Task A**.
 
 ### Table of Contents
@@ -12,7 +12,6 @@ Supports **English Tasks A, B, C** and **Danish Task A**.
   - [`training.py` – Fine-Tuning Models](#trainingpy--fine-tuning-models)
   - [`evaluation.py` – Model Evaluation](#evaluationpy--model-evaluation)
 - [Features](#features)
-- [Branching Strategy](#branching-strategy)
 - [Citation](#citation)
 
 #### Project Overview
@@ -61,8 +60,8 @@ This script handles **model training** for all supported tasks. You can customiz
 - **Model architecture:** e.g., `bert-base-cased`, `albert-base-v2`, `bert-base-multilingual-cased`
 - **Preprocessing methods:** If no method is specified, the default is no preprocessing
 - **Dataset size:** Default is a sample of **1000 tweets**; you can train on the **full dataset**
-- **Hyperparameters:** Batch size, learning rate, epochs  
-  *(Default settings: `batch size = 8`, `learning rate = 2e-5`, `epochs = 3`)*  
+- **Hyperparameters:** Batch size, learning rate, epochs
+  *(Default settings: `batch size = 8`, `learning rate = 2e-5`, `epochs = 3`)*
   **Note:** Only one hyperparameter may be changed at a time while keeping others at default.
 
 After training, the model is **saved and evaluated** on the test set automatically.
@@ -91,7 +90,7 @@ This script loads **saved fine-tuned models** from the `finetuned_offensive` dir
 - **Macro F1-Score** (Primary metric)
 - **Accuracy**
 
-For each subtask, the directory contains one model that is the **best** for that subtask (in terms of F1 and accuracy).  
+For each subtask, we represent one model that is the **best** for that subtask (in terms of F1).
 Thus, there are four best models available (one for each subtask).
 
 **Usage Example:**
@@ -106,26 +105,28 @@ python evaluation.py --model bert-base-cased-task-A-eng
 | `-h, --help` | Show help message and exit | |
 | `--model` | Choose one of the pre-trained models to evaluate | `{bert-base-cased-task-A-eng, bert-base-cased-task-B-eng, bert-base-cased-task-C-eng, bert-base-multilingual-cased-task-A-danish}` |
 'bert-base-cased-task-A-eng', 'bert-base-cased-task-B-eng', 'bert-base-cased-task-C-eng', 'bert-base-multilingual-cased-task-A-danish'
+
+###### Results of our best models
+bert-base-cased-task-A-eng: MacroAvg F1 score **0.8175**
+bert-base-cased-task-B-eng: MacroAvg F1 score **0.7318**
+bert-base-cased-task-C-eng: MacroAvg F1 score **0.5773**
+bert-base-multilingual-cased-task-A-danish: MacroAvg F1 score **0.7814**
+
+OffensEval 2020 reports the following majority baselines for the tasks (F1-score):
+• Subtask A (English): 0.4193
+• Subtask B (English): 0.3741
+• Subtask C (English): 0.2704
+• Subtask A (Danish): 0.4668
+
 #### Features
 
-Fine-tuning & Evaluation for **4 subtasks**  
-Multiple **Transformer architectures** supported  
-Configurable **Preprocessing pipeline**  
-Flexible **Hyperparameter tuning**  
-Supports **English & Danish datasets**  
-Evaluation metrics: **Macro F1-Score & Accuracy**  
+Fine-tuning & Evaluation for **4 subtasks**
+Multiple **Transformer architectures** supported
+Configurable **Preprocessing pipeline**
+Flexible **Hyperparameter tuning**
+Supports **English & Danish datasets**
+Evaluation metrics: **Macro F1-Score & Accuracy**
 Best fine-tuned models available in `finetuned_offensive/`
-
-#### Branching Strategy
-
-The repository uses the following branching structure:
-
-| Branch | Description |
-|:-:|:-|
-| `main` | Contains the **final code** and four **best fine-tuned models** |
-| `feature/add-bert-model-components` | Experimental results - BERT components |
-| `albert-model` | Experimental results - ALBERT models |
-| `roberta-model` | Experimental results - RoBERTa models |
 
 #### Citation
 
